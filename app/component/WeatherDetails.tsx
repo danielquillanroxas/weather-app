@@ -13,13 +13,16 @@ interface DetailsProps {
 const WeatherDetails = ( { data }: DetailsProps) => {
   return (
     <div className="align-items-center">
-        <div className="w-20rem h-20rem m-2 bg-primary-reverse">
+        <div className="sm:w-15rem sm:h-18rem md:w-15rem md:h-20rem lg:w-20rem lg:h-20rem m-2 bg-primary-reverse">
           <div>
-            {data.forecast.forecastday.map((day, index) => (
               <div key={index} className="align-items-center">
-
+                <div>
+                <p className="m-0 overflow-scroll ">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae
+        numquam deserunt quisquam repellat libero asperieeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!
+    </p>
+                </div>
               </div>
-            ))}
           </div>
           <Divider />
         </div>
