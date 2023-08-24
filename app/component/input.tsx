@@ -1,9 +1,10 @@
 "use client"
-import React from 'react';
+import React, { useState } from 'react';
 import { MegaMenu } from 'primereact/megamenu';
 import { AutoComplete } from 'primereact/autocomplete';
 import { Button } from 'primereact/button';
 import cloudImage from '../images/cloud.jpg';
+import { InputSwitch } from 'primereact/inputswitch';
 
 interface InputProps {
     handleSearch: (event: React.KeyboardEvent<HTMLInputElement>) => void;
@@ -11,16 +12,19 @@ interface InputProps {
     location: string;
     theme: 'light' | 'dark';
     toggleTheme: () => void;
+    changeTheme: (e: any) => void;
 }
 
-const Input: React.FC<InputProps> = ({ handleSearch, setLocation, location, theme, toggleTheme }) => {
-
+const Input: React.FC<InputProps> = ({ handleSearch, setLocation, location, theme, toggleTheme, changeTheme }) => {
+    const [checked, setChecked] = useState(false);
     const themeButton = (
-        <Button
-            label={theme === 'light' ? 'Dark Mode' : 'Light Mode'}
-            className="p-button-info"
-            onClick={toggleTheme}
-        />
+        <InputSwitch
+    onChange={(e) => {
+        setChecked(e.value);
+        changeTheme(e);
+    }}
+    checked={checked}
+/>
     );
 
     const items = [

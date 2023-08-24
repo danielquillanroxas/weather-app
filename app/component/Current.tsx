@@ -35,8 +35,8 @@ const Current = ({ data }: CurrentProps) => {
   const weatherIcon = data.current.condition.icon
   return (
     <div className='grid'>
-      <div className="flex flex-column mb-8  px-2 md:mb-0 align-items-center gap-2 w-auto sm:col-12 md:col-12 lg:col-6">
-        <div className="">
+      <div className="flex flex-column mb-8  px-2 md:mb-0 align-items-center gap-2 w-auto sm:col-12 md:col-12 lg:col-6 text-color">
+        <div>
           <div>
             <h1 className='text-3xl px-2 py-2 font-bold text-center'>Today</h1>
             <p className='text-2xl px-2 text-center'>{currentDate}</p>
@@ -52,7 +52,7 @@ const Current = ({ data }: CurrentProps) => {
         </div>
         <div className='flex align-items-center'>
           <div className='flex flex-wrap px-2 py-2 gap-1 max-w-20rem'>
-            <Tag icon="pi pi-map-marker" className='text-base ml-2 border-noround' >
+            <Tag icon="pi pi-map-marker" className='text-base ml-2 border-noround' style={{background:'text-color-secondary'}} >
             <span className=' white-space-normal'>{data.location.name}, {data.location.region}, {data.location.country} </span>
             </Tag>
           </div>
